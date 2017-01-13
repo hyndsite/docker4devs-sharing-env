@@ -4,9 +4,6 @@ services:
   nginx:
     container_name: nginx
     image: maxmccarty/hh-nginx-dev-i
-    build:
-      context: .
-      dockerfile: ./.docker/nginx.dev.dockerfile
     networks:
       - hackershall-network
     links:
@@ -17,9 +14,6 @@ services:
   node:
     container_name: hackershall-dev-app
     image: maxmccarty/hackershall-dev-i
-    build:
-      context: .
-      dockerfile: ./.docker/node.dev.dockerfile
     ports:
       - "7000"
     networks:
